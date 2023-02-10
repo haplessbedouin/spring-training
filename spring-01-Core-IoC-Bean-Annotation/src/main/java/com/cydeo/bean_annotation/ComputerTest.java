@@ -22,6 +22,18 @@ public class ComputerTest {
 
         myPc.powerUp();
 
+        System.out.println("Retrieving the beans");
+        Monitor theMonitor0 = container.getBean(Monitor.class);
+        Case theCase0 = container.getBean(Case.class);
+        Motherboard theMotherboard0 = container.getBean(Motherboard.class);
+
+        System.out.println("Multiple objects in the config class");
+
+        Monitor theMonitor2 = container.getBean("monitorSony", Monitor.class); // Default bean name
+        Monitor theMonitor3 = container.getBean("sony", Monitor.class); // Custom bean name
+        Monitor theMonitor4 = container.getBean(Monitor.class); // @Primary annotation
+
+
     }
 
 }
