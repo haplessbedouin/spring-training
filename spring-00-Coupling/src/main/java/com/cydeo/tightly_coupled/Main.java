@@ -1,5 +1,7 @@
 package com.cydeo.tightly_coupled;
 
+import com.cydeo.loosely_coupled.monitorfactory.SonyMonitor;
+
 public class Main {
 
     public static void main(String[] args) {
