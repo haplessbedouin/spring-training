@@ -30,9 +30,17 @@ public class ComputerTest {
         System.out.println("Multiple objects in the config class");
 
         Monitor theMonitor2 = container.getBean("monitorSony", Monitor.class); // Default bean name
-        Monitor theMonitor3 = container.getBean("sony", Monitor.class); // Custom bean name
+        //Monitor theMonitor3 = container.getBean("sony", Monitor.class); // Custom bean name
         Monitor theMonitor4 = container.getBean(Monitor.class); // @Primary annotation
 
+        System.out.println(theMonitor2);
+        System.out.println(theMonitor4);
+
+        PC myPc2 = new PC(theCase, theMonitor2, theMotherboard);
+        myPc2.powerUp();
+
+        PC myPc3 = new PC(theCase, theMonitor4, theMotherboard);
+        myPc3.powerUp();
 
     }
 
