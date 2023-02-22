@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Cydeo</title>
+</head>
+<body>
+
+<h2>Welcome Cydeo Student !</h2>
+<a th:href="@{https://cydeo.com}">Cydeo page</a>
+<br>
+<a th:href="@{/student/register}">register page</a>
+
+<!--Adding parameters in link-->
+
+<h2><a th:href="@{/student/register(id=3)}">Make a search in the register page</a></h2>
+
+</body>
+</html>
