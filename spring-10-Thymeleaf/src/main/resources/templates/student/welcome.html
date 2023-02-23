@@ -11,9 +11,20 @@
 <br>
 <a th:href="@{/student/register}">register page</a>
 
-<!--Adding parameters in link-->
+<h2><a th:href="@{/student/register(name=${students2.get(0).firstName})}">Make a search in the register page</a></h2>
 
-<h2><a th:href="@{/student/register(id=3)}">Make a search in the register page</a></h2>
+<h2>Students' First Name</h2>
+<br>
+<ul>
+  <li th:each="student : ${students2}" th:text="${student.firstName}"></li>
+</ul>
+
+<h2>Students' Last Name</h2>
+<br>
+<ul>
+  <li th:each="student : ${students2}" th:text="${student.lastName}"></li>
+</ul>
+
 
 </body>
 </html>

@@ -10,22 +10,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/student")
 public class StudentController {
     @RequestMapping("/register")
-    public String register(@RequestParam int id, Model model) {
-
-        System.out.println(id);
+    public String register(Model model) {
 
         model.addAttribute("students", DataGenerator.createStudent());
 
         return "student/register";
     }
 
-    @RequestMapping("/drop")
-    public String drop() {
-        return "student/register";
-    }
-
     @RequestMapping("/welcome")
-    public String welcome(){
+    public String welcome(Model model) {
+
+        model.addAttribute("students2", DataGenerator.createStudent());
+
         return "student/welcome";
     }
 
