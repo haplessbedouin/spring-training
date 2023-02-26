@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cydeo</title>
+</head>
+<body>
+
+<div align="center">
+<form th:action="@{/mentor/confirm}" method="post" th:object="${mentor}">
+    <label>First Name:</label>
+    <input type="text" th:field="*{firstName}"><br>
+
+    <label>Last Name:</label>
+    <input type="text" th:field="*{lastName}"><br>
+
+    <label>Email:</label>
+    <input type="email" th:field="*{email}"><br>
+
+    <label>Alumni:</label>
+    <input type="checkbox" th:field="*{alumni}"><br>
+
+    <label>Gender:</label>
+    <input type="radio" value="Male" th:field="*{gender}">Male
+    <input type="radio" value="Female" th:field="*{gender}">Female<br>
+
+    <lable>Batch Number:</lable>
+    <select th:field="*{batch}">
+        <option th:each=" theBatch : ${batchList}" th:value="${theBatch}" th:text="${theBatch}"></option>
+    </select><br>
+
+    <lable>Company:</lable>
+    <textarea th:field="*{company}"></textarea><br>
+
+    <button type="submit">Register</button>
+
+
+
+</form>
+</div>
+
+
+</body>
+</html>
