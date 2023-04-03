@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Component
@@ -54,6 +55,9 @@ public class DataGenerator implements CommandLineRunner {
         Employees e3 = new Employees("Sydney", "Symonds", "ssymonds2@hhs.gov", LocalDate.of(2010,05,17), Gender.FEMALE, 2500);
         Employees e4 = new Employees("Avrom", "Rowantree", null, LocalDate.of(2014,03,02), Gender.MALE, 2500);
         Employees e5 = new Employees("Feliks", "Morffew", "fmorffew4@a8.net", LocalDate.of(2003,01,14), Gender.MALE, 2500);
+
+        employeesList.addAll(Arrays.asList(e1,e2,e3,e4,e5));
+        departmentsList.addAll(Arrays.asList(d1,d2,d3,d4,d5));
 
         employeesRepository.saveAll(employeesList);
         departmentRepository.saveAll(departmentsList);
