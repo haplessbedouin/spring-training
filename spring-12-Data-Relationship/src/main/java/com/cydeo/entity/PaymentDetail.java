@@ -11,7 +11,7 @@ import java.time.LocalDate;
 @Table(name = "paymentDetails")
 @Data
 @NoArgsConstructor
-public class PaymentDetails {
+public class PaymentDetail {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,7 +21,7 @@ public class PaymentDetails {
     @Column(columnDefinition = "DATE")
     private LocalDate payoutDate;
 
-    public PaymentDetails(BigDecimal merchantPayoutAmount, BigDecimal commissionAmount, LocalDate payoutDate) {
+    public PaymentDetail(BigDecimal merchantPayoutAmount, BigDecimal commissionAmount, LocalDate payoutDate) {
         this.merchantPayoutAmount = merchantPayoutAmount;
         this.commissionAmount = commissionAmount;
         this.payoutDate = payoutDate;
