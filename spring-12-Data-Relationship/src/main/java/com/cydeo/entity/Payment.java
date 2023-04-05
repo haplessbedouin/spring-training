@@ -24,6 +24,8 @@ public class Payment {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "payment_detail_id")
     private PaymentDetail paymentDetail;
+    @ManyToOne
+    private Merchant merchant;
 
     public Payment(LocalDate createdDate, BigDecimal amount, Status paymentStatus) {
         this.createdDate = createdDate;
