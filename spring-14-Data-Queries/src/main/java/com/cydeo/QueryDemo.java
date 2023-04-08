@@ -15,5 +15,8 @@ public class QueryDemo implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         System.out.println("findByCountry:" + regionRepository.findByCountry("Canada"));
+        System.out.println("findByCountryContains:" + regionRepository.findByCountryContains("United"));
+        System.out.println("findByCountryContainsOrderByRegionAsc:" + regionRepository.findByCountryContainsOrderByRegionAsc("United"));
+        System.out.println("findTop2ByCountry:" + regionRepository.findTop2ByCountry("United States"));
     }
 }
