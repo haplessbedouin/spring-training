@@ -59,4 +59,6 @@ public class SchoolController {
         return addressService.update(addressDTO);
     }
 
+    //End of the lab
+
 }
